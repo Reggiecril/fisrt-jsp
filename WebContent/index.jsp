@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<!-- HTML comment -->
+	<%-- JSP comment --%> 
+	<%
+		//regular comment
+		/**
+		 **XML comment
+		 **/
+	%>
 	<h1>Hello,World!!</h1>
 </body>
 </html>
