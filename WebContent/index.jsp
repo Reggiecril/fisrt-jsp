@@ -7,6 +7,19 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h2>out OBJECT</h2>
+	<% 
+		out.println("<h1>Hello</h1><br>");
+		out.println("World<br>");
+		out.println("jsp<br>");
+		out.println("kepp<br>");
+		out.println("print<br>");
+		//out.clear();
+		out.clearBuffer();
+		out.flush();
+		out.println(out.getBufferSize());
+		out.println(out.getRemaining()+"<br>");
+	%>
 	<!-- HTML comment -->
 	<%-- JSP comment --%> 
 	<%
@@ -47,7 +60,18 @@
 	%>
 	
 	<%=getMultiTable() %>
-		<% getMultiTable1(out);%>
-
+	<% getMultiTable1(out);request.setAttribute("reggie", "123");%>
+	<form action="Response.jsp" method="post">
+		<label for="email">Email:</label>
+		<input type="text" id="email" name="email" value="hello">
+		<label for="pass">Password:</label>
+		<input type="text" id="pass" name="pass" value="hello">
+		
+		<input type="submit" value="Confirm">
+	
+	</form>
+	<a href="doLogin.jsp?email=和">Test Href</a>
+		<a href="Response.jsp">Response</a>
+	
 </body>
 </html>
