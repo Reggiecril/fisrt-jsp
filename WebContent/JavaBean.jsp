@@ -14,8 +14,10 @@
 	//user.setUsername("reggie");
 	//user.setPassword("123");
 %>
+<!--<jsp:useBean id="myUser" class="com.test.User" scope="page"></jsp:useBean>-->
+<!--<jsp:useBean id="myUser" class="com.test.User" scope="application"></jsp:useBean>-->
+<!--<jsp:useBean id="myUser" class="com.test.User" scope="session"></jsp:useBean>-->
 <jsp:useBean id="myUser" class="com.test.User" scope="page"></jsp:useBean>
-
 <!-- All -->
 <jsp:setProperty property="*" name="myUser"/>
 Username:<%=myUser.getUsername() %>
@@ -49,5 +51,12 @@ Pass:<%=myUser.getPass() %>
  Username:<jsp:getProperty property="username" name="myUser"/>
  </br>
  Password:<jsp:getProperty property="pass" name="myUser"/>
+ 
+ </br>
+ 
+ <a href="JavaBeanTest.jsp">Tets</a>
+ <%
+ 	request.getRequestDispatcher("JavaBeanTest.jsp").forward(request, response);
+ %>
 </body>
 </html>
